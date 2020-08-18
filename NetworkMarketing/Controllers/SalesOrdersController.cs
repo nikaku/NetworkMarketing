@@ -13,11 +13,11 @@ namespace NetworkMarketing.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SalesOrderController : ControllerBase
+    public class SalesOrdersController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public SalesOrderController(IUnitOfWork unitOfWork, IMapper mapper)
+        public SalesOrdersController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;

@@ -17,6 +17,8 @@ using NetworkMarketing.AutoMapperProfiles;
 using NetworkMarketing.BL;
 using NetworkMarketing.BL.Entities;
 using NetworkMarketing.BL.Interfaces;
+using NetworkMarketing.BL.Services;
+using NetworkMarketing.BL.Services.DistributorService;
 using NetworkMarketing.DB;
 using NetworkMarketing.DB.Implementations;
 
@@ -40,20 +42,19 @@ namespace NetworkMarketing
             services.Configure<AppSettings>(appSettingsSection);
             AppSettings appSettings = appSettingsSection.Get<AppSettings>();
 
-            var connection = $"Server=tcp:{appSettings.SqlServerHostName},{appSettings.SqlServerPort};Initial Catalog={appSettings.SqlServerCatalog};Persist Security Info=False;User ID={appSettings.SqlServerUser};Password={appSettings.SqlServerPassword};MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;";
+            var connectionSql = $"Server=tcp:{appSettings.SqlServerHostName},{appSettings.SqlServerPort};Initial Catalog={appSettings.SqlServerCatalog};Persist Security Info=False;User ID={appSettings.SqlServerUser};Password={appSettings.SqlServerPassword};MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;";
+
+            var connectionPostgre = appSettings.PostgreConnectionString;
 
             services.AddDbContext<DataContext>(options =>
             {
-                options.UseSqlServer(connection);
+                options.UseNpgsql(connectionPostgre);
             });
 
-            var con2 = "User ID =postgres;Password=123456;Server=localhost;Port=5432;Database=deneme;Integrated Security=true;Pooling=true;";
-
-          
-
+         
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<IItemRepository, ItemRepository>();
-            //services.AddScoped<IDistributorRepository, DistributorRepository>();
+            services.AddScoped<IDistributorService, DistributorService>();
+
 
             services.AddAutoMapper(c => c.AddProfile<DistibutorProfile>(), typeof(Startup));
             services.AddAutoMapper(c => c.AddProfile<ItemProfile>(), typeof(Startup));

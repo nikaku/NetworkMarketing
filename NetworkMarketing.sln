@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMarketing", "NetworkMarketing\NetworkMarketing.csproj", "{800DA1CB-185C-4F52-A5CF-CD39F201DC4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkMarketing", "NetworkMarketing\NetworkMarketing.csproj", "{800DA1CB-185C-4F52-A5CF-CD39F201DC4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMarketing.DB", "NetworkMarketing.DB\NetworkMarketing.DB.csproj", "{8C4EDF91-71D2-4DA1-A725-AB168AB5CD59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkMarketing.DB", "NetworkMarketing.DB\NetworkMarketing.DB.csproj", "{8C4EDF91-71D2-4DA1-A725-AB168AB5CD59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMarketing.BL", "NetworkMarketing.BL\NetworkMarketing.BL.csproj", "{C4897A06-F0B8-4C59-B33F-DC6093C323FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkMarketing.BL", "NetworkMarketing.BL\NetworkMarketing.BL.csproj", "{C4897A06-F0B8-4C59-B33F-DC6093C323FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkMarketing.Tests", "NetworkMarketing.Tests\NetworkMarketing.Tests.csproj", "{B4517754-BFFC-48DF-82E6-21B3366CC781}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C4897A06-F0B8-4C59-B33F-DC6093C323FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4897A06-F0B8-4C59-B33F-DC6093C323FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4897A06-F0B8-4C59-B33F-DC6093C323FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4517754-BFFC-48DF-82E6-21B3366CC781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4517754-BFFC-48DF-82E6-21B3366CC781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4517754-BFFC-48DF-82E6-21B3366CC781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4517754-BFFC-48DF-82E6-21B3366CC781}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,11 +12,8 @@ namespace NetworkMarketing.BL
         public string SqlServerCatalog { get; set; }
         public string SqlServerUser { get; set; }
         public string SqlServerPassword { get; set; }
-        public bool EnableSSL { get; set; }
-        public string AdminPassword { get; set; }
-        public string MinioServerIp { get; set; }
-        public string MinioServerPort { get; set; }
-        public string MinioAccesKey { get; set; }
-        public string MinioSecetKey { get; set; }
+        public bool EnableSSL { get; set; } 
+        public string PostgreConnectionString { get; set; }
     }
+    
 }

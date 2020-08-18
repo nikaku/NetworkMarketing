@@ -10,6 +10,11 @@ namespace NetworkMarketing.BL.Entities
 {
     public class Distributor
     {
+        public Distributor()
+        {
+            SalesOrders = new List<SalesOrder>();
+            Recomendators = new List<Distributor>();
+        }
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -26,19 +31,7 @@ namespace NetworkMarketing.BL.Entities
         public virtual IList<SalesOrder> SalesOrders { get; set; }
         public int? RecomendatorId { get; set; }
         public int ReferalLevel { get; set; }
-
-
-
-        public decimal CalculateBonus(decimal percent)
-        {
-            decimal result = 0;
-            if (SalesOrders == null)
-            {
-                return 0;
-            }
-            result = SalesOrders.Sum(x => x.TotalPrice) * percent / 100;
-            return result;
-        }
+       
 
         //public HashSet<TestChild> GetChildren()
         //{
